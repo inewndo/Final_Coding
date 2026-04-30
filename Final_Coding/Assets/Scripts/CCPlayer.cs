@@ -33,7 +33,6 @@ public class PlayerCC : MonoBehaviour
 
     [Header("Interactable")]
     public Image reticleImage;
-    public Interactable currentInteractable;
     public bool interactPressed;
 
     private void Awake()
@@ -57,7 +56,6 @@ public class PlayerCC : MonoBehaviour
     {
         CheckGround();
         CameraLook();
-        HandleInteract();
         camTransform.position = transform.position;
     }
 
@@ -111,34 +109,8 @@ public class PlayerCC : MonoBehaviour
         camTransform.localRotation = Quaternion.Euler(_pitch, 0f, 0f);
     }
 
-    void CheckInteract()
-    {
-        if (reticleImage != null) reticleImage.color = new Color(0, 0, 0, .7f);
-        Ray ray = new Ray(camTransform.position, camTransform.forward);
-      
-        if (Physics.Raycast(ray, out RaycastHit hit, 3f))
-        {
-            currentInteractable = hit.collider.GetComponent<Interactable>();
-            if (currentInteractable != null && reticleImage != null)
-            {
-                reticleImage.color = Color.red;
-                Debug.DrawRay(camTransform.position, camTransform.forward * 3, Color.blue);
-
-            }
-            else
-            {
-                Debug.DrawRay(camTransform.position, camTransform.forward * 3, Color.blue);
-            }
-        }
-
-    }
-    void HandleInteract()
-    {
-        if (!interactPressed) return;
-        interactPressed = false;
-        if (currentInteractable == null) return;
-        currentInteractable.Interact(this);
-    }
+    
+    
 
     ///      Movement input system       ///
     public void OnMove(InputAction.CallbackContext context)
