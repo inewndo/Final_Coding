@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 1286420997589498906}
   - component: {fileID: 4965740452735536769}
   - component: {fileID: 1713531688967773488}
+  - component: {fileID: 8024013303522520309}
+  - component: {fileID: 5492535226869896144}
   - component: {fileID: 1907961956807661122}
+  - component: {fileID: 229455400528546590}
   m_Layer: 0
   m_Name: InteractCube
   m_TagString: Interactable
@@ -91,6 +94,39 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8024013303522520309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437821490842633166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ab00a20b87092458f024beebdc0ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
+  highLightcolor: {r: 1, g: 0.95, b: 0.6, a: 1}
+  highLightStrength: 0.4
+--- !u!114 &5492535226869896144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437821490842633166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad39c7dfbded5842b653953464bac84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhysicsObj
+  mass: 1
+  drag: 0.5
+  angularDrag: 0.5
+  bouncinnes: 0
+  friction: 0.6
+  puzzleWeight: -1
+  isHeld: 0
 --- !u!65 &1907961956807661122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112,3 +148,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &229455400528546590
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437821490842633166}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
