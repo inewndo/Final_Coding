@@ -207,7 +207,7 @@ public class ObjectGrabber : MonoBehaviour
                 if (_currentHighlight != null && _currentHighlight != interactableObject)
                 {
                     _currentHighlight.Unhighlight();
-                    Debug.Log("UNHIGHLIGHTED");
+                    //Debug.Log("UNHIGHLIGHTED");
                 }
 
                 //highligh the new obj
