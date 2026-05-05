@@ -42,8 +42,8 @@ public class PlayerCC : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        reticleImage = GameObject.Find("Reticle").GetComponent<Image>();
-        reticleImage.color = new Color(r: 0, g: 0, b: 0, a: 7f);
+        //reticleImage = GameObject.Find("Reticle").GetComponent<Image>();
+        //reticleImage.color = new Color(r: 0, g: 0, b: 0, a: 7f);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
